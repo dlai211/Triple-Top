@@ -1,0 +1,27 @@
+import model gen2HDM_UFO
+define q = u c u~ c~
+define q~ = d~ b~ s~ d b s
+define p = p b b~
+define j = p
+
+generate p p > t A0 QCD=99, (t > w+ b , w+ > l+ vl) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t A0 QCD=99, (t > w+ b , w+ > q q~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t A0 QCD=99, (t > w+ b , w+ > q q~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ A0 QCD=99, (t~ > w-  b~ , w- > l- vl~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ A0 QCD=99, (t~ > w-  b~ , w- > q q~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ A0 QCD=99, (t~ > w-  b~ , w- > q q~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+
+output test
+
+launch test
+set use_syst False
+set rtc 0.5
+set rtt 0.5
+set rtu 0
+set nevents 500
+set ebeam1 7000.0
+set ebeam2 7000.0
+set MA0 400
+set MS0 0
+set wa0 7.01074286
+set ws0 0
