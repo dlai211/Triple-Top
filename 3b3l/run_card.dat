@@ -23,7 +23,7 @@
 # Number of events and rnd seed                                      *
 # Warning: Do not generate more than 1M events in a single run       *
 #*********************************************************************
-  10000	= nevents ! Number of unweighted events requested 
+  8000	= nevents ! Number of unweighted events requested 
   0	= iseed ! rnd seed (0=assigned automatically=default))
 #*********************************************************************
 # Collider type and energy                                           *
@@ -58,25 +58,7 @@
   False	= gridpack !True = setting up the grid pack
   -1.0	= time_of_flight ! threshold (in mm) below which the invariant livetime is not written (-1 means not written)
   average	= event_norm ! average/sum. Normalization of the weight in the LHEF
-#*********************************************************************
-# Matching parameter (MLM only)
-#*********************************************************************
-  1	= ickkw ! 0 no matching, 1 MLM
-  1.0	= alpsfact ! scale factor for QCD emission vx
-  False	= chcluster ! cluster only according to channel diag
-  5	= asrwgtflavor ! highest quark flavor for a_s reweight
-  True	= auto_ptj_mjj ! Automatic setting of ptj and mjj if xqcut >0
-                                   ! (turn off for VBF and single top processes)
-  30.0	= xqcut ! minimum kt jet measure between partons
-
-#***********************************************************************
-# Turn on either the ktdurham or ptlund cut to activate                *
-# CKKW(L) merging with Pythia8 [arXiv:1410.3012, arXiv:1109.4829]      *
-#***********************************************************************
-  -1.0	= ktdurham 
-  0.4	= dparameter 
-  -1.0	= ptlund 
-  1, 2, 3, 4, 5, 6, 21	= pdgs_for_merging_cut ! PDGs for two cuts above
+# To see MLM/CKKW  merging options: type "update MLM" or "update CKKW"
 
 #*********************************************************************
 #
@@ -134,14 +116,16 @@
 #*********************************************************************
 # Minimum and maximum DeltaR distance                                *
 #*********************************************************************
-  0.0	= drjj ! min distance between jets 
+  0.4	= drjj ! min distance between jets 
   0.4	= drll ! min distance between leptons 
-  0.0	= drjl ! min distance between jet and lepton 
+  0.4	= drjl ! min distance between jet and lepton 
   -1.0	= drjjmax ! max distance between jets
   -1.0	= drllmax ! max distance between leptons
   -1.0	= drjlmax ! max distance between jet and lepton
 #*********************************************************************
 # Minimum and maximum invariant mass for pairs                       *
+ # WARNING: for four lepton final state mmll cut require to have      *
+ #          different lepton masses for each flavor!                  *           
 #*********************************************************************
   0.0	= mmjj ! min invariant mass of a jet pair 
   0.0	= mmll ! min invariant mass of l+l- (same flavour) lepton pair
@@ -183,8 +167,12 @@
  #*********************************************************************
   0.0	= ptl1min ! minimum pt for the leading lepton in pt
   0.0	= ptl2min ! minimum pt for the second lepton in pt
+  0.0	= ptl3min ! minimum pt for the third lepton in pt
+  0.0	= ptl4min ! minimum pt for the fourth lepton in pt
   -1.0	= ptl1max ! maximum pt for the leading lepton in pt 
   -1.0	= ptl2max ! maximum pt for the second lepton in pt
+  -1.0	= ptl3max ! maximum pt for the third lepton in pt
+  -1.0	= ptl4max ! maximum pt for the fourth lepton in pt
  #*********************************************************************
  # Control the Ht(k)=Sum of k leading jets                            *
  #*********************************************************************
@@ -217,8 +205,8 @@
   False	= use_syst ! Enable systematics studies
 #
   systematics	= systematics_program ! none, systematics [python], SysCalc [depreceted, C++]
-['--mur=0.5,1,2', '--muf=0.5,1,2', '--pdf=errorset', '--alps=0.5,1,2'] = systematics_arguments ! see: https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/Systematics#Systematicspythonmodule
+['--mur=0.5,1,2', '--muf=0.5,1,2', '--pdf=errorset'] = systematics_arguments ! see: https://cp3.irmp.ucl.ac.be/projects/madgraph/wiki/Systematics#Systematicspythonmodule
 # Syscalc is deprecated but to see the associate options type'update syscalc'#********************************************************************* 
 #  Additional hidden parameters
 #*********************************************************************
-  ['--mur=0.5,1,2', '--muf=0.5,1,2', '--pdf=errorset', '--alps=0.5,1,2']	= systematics_arguments # Choose the argment to pass to the systematics command. like --mur=0.25,1,4. Look at the help of the systematics function for more details.
+  ['--mur=0.5,1,2', '--muf=0.5,1,2', '--pdf=errorset']	= systematics_arguments # Choose the argment to pass to the systematics command. like --mur=0.25,1,4. Look at the help of the systematics function for more details.
