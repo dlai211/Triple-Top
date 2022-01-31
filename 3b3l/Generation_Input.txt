@@ -2,41 +2,76 @@ import model gen2HDM_UFO
 define p = p b b~
 define j = p
 
-generate p p > t A0 j QCD=99, (t > w+ b , w+ > l+ vl) ,( A0 > t c~ , (t > w+ b , w+ > l+ vl))
-add process p p > t~ A0 j QCD=99, (t~ > w- b~ , w- > l- vl~) ,( A0 > c t~ ,(t~ > w- b~ , w- > l- vl~) )
+generate p p > t A0 QCD=99, (t > w+ b , w+ > l+ vl) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ A0 QCD=99, (t~ > w- b~ , w- > l- vl~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~) , (A0 > t c~ , (t > w+ b , w+ > l+ vl))
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~) , (A0 > t~ c , (t~ > w- b~ , w- > l- vl~))
 
-add process p p > t S0 j QCD=99, (t > w+ b , w+ > l+ vl) ,( S0 > t c~ , (t > w+ b , w+ > l+ vl))
-add process p p > t~ S0 j QCD=99, (t~ > w- b~ , w- > l- vl~) ,( S0 > c t~ ,(t~ > w- b~ , w- > l- vl~) )
+add process p p > t S0 QCD=99, (t > w+ b , w+ > l+ vl) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ S0 QCD=99, (t~ > w- b~ , w- > l- vl~) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~) , (S0 > t c~ , (t > w+ b , w+ > l+ vl))
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~) , (S0 > t~ c , (t~ > w- b~ , w- > l- vl~))
 
-add process p p > t t QCD=99, (t > w+ b , w+ > l+ vl)
-add process p p > t t j QCD=99, (t > w+ b , w+ > l+ vl)
-add process p p > t t j j QCD=99, (t > w+ b , w+ > l+ vl)
-
-add process p p > t~ t~ QCD=99, (t~ > w- b~ , w- > l- vl~)
-add process p p > t~ t~ j QCD=99, (t~ > w- b~ , w- > l- vl~)
-add process p p > t~ t~ j j QCD=99, (t~ > w- b~ , w- > l- vl~)
-
-output test4
-launch test4
+output 3b3l
+launch 3b3l
 
 # set shower, detector
-analysis=MadAnalysis5
 shower=Pythia8
 detector=Delphes
 done
-
+###################################
+# set param and run card settings #
+###################################
 set use_syst False
+set rtc 0.1
+set rtt 1
+set rtu 0
 set kasz 0 
 set kazh -0.37037187
 set lshh 0
-set rtc 1
-set rtt 0
-set rtu 0
-set nevents 10000
+set nevents 8000
 set ebeam1 7000.0
 set ebeam2 7000.0
-set MS0 scan1:[200, 300, 400, 500, 600]
-set ws0 scan1:[0.8084067888488623, 8.06788791041956, 15.860676327908143, 23.196447115001444, 30.16587229374456]
-set MA0 scan1:[250, 350, 450, 550, 650]
-set wa0 scan1:[4.13772947, 12.01732392, 19.58278383, 26.7187081, 33.55110298]
+set MS0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set ws0 scan1:[0.2510858221774318, 3.33089582984594, 7.392238252326016, 11.637401523582657, 15.860310959586286, 19.997150297933292, 24.032130929749222, 27.967073707803756]
+set MA0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set wa0 scan1:[3.971468008349843, 12.340978652612053, 17.510512368917247, 21.888296836833756, 25.87979309124852, 29.64147366558511, 33.25137848197779, 36.75421182622855]
+done
+
+launch 3b3l
+done
+set use_syst False
+set rtc 0.5
+set rtt 1
+set rtu 0
+set kasz 0 
+set kazh -0.37037187
+set lshh 0
+set nevents 8000
+set ebeam1 7000.0
+set ebeam2 7000.0
+set MS0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set ws0 scan1:[3.1352435621652597, 7.137439541228131, 12.092106372620833, 17.204532304569224, 22.272800903777625, 27.23694518760864, 32.084395645829524, 36.81957491935673]
+set MA0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set wa0 scan1:[6.855625748337671, 16.147522363994245, 22.210380489212064, 27.45542761782032, 32.29228303543986, 36.88126855526046, 41.30364319805809, 45.606713037781525]
+done
+
+launch 3b3l
+done
+set use_syst False
+set rtc 1
+set rtt 1
+set rtu 0
+set kasz 0 
+set kazh -0.37037187
+set lshh 0
+set nevents 8000
+set ebeam1 7000.0
+set ebeam2 7000.0
+set MS0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set ws0 scan1:[12.14823649962722, 19.032888639297482, 26.779194248542137, 34.601815995152236, 42.311831979375555, 49.86130421784411, 57.24772288358048, 64.48364120545979]
+set MA0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set wa0 scan1:[15.868618685799632, 28.042971462063594, 36.89746836513336, 44.852711308403336, 52.331314111037784, 59.50562758549593, 66.46697043580905, 73.27077932388458]
 done
