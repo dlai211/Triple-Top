@@ -1,0 +1,21 @@
+define zq = u c d b s vl
+define zq~ = u~ c~ d~ b~ s~ vl~
+define wq = u c u~ c~
+define wq~ = d~ b~ s~ d b s
+
+define p = p b b~
+define j = p
+
+generate p p > t t~ Z j, (t > w+ b , w+ > l+ vl) , (t~ > w- b~ , w- > wq wq~) , ( Z > l+ l-)
+add process p p > t t~ Z j, (t > w+ b , w+ > wq wq~) , (t~ > w- b~ , w- > l- vl~) , ( Z > l+ l-)
+
+output ttZ
+
+launch ttZ
+shower=PYTHIA8
+detector=delphes
+
+set nevents 5000
+set ebeam1 7000.0
+set ebeam2 7000.0
+set use_syst False

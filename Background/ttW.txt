@@ -1,0 +1,18 @@
+define q = u c u~ c~
+define q~ = d~ b~ s~ d b s
+define p = p b b~
+define j = p
+generate p p > t t~ w+ j QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~), (w+ > l+ vl)
+add process p p > t t~ w- j QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~), (w- > l- vl~)
+
+output ttW
+
+launch ttW
+shower=PYTHIA8
+detector=delphes
+
+set nevents 5000
+set ebeam1 7000.0
+set ebeam2 7000.0
+set use_syst False
+done
