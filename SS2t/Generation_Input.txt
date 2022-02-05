@@ -2,13 +2,7 @@ import model gen2HDM_UFO
 define p = p b b~
 define j = p
 
-generate p p > t A0 j QCD=99, (t > w+ b , w+ > l+ vl) ,( A0 > t c~ , (t > w+ b , w+ > l+ vl))
-add process p p > t~ A0 j QCD=99, (t~ > w- b~ , w- > l- vl~) ,( A0 > c t~ ,(t~ > w- b~ , w- > l- vl~) )
-
-add process p p > t S0 j QCD=99, (t > w+ b , w+ > l+ vl) ,( S0 > t c~ , (t > w+ b , w+ > l+ vl))
-add process p p > t~ S0 j QCD=99, (t~ > w- b~ , w- > l- vl~) ,( S0 > c t~ ,(t~ > w- b~ , w- > l- vl~) )
-
-add process p p > t t QCD=99, (t > w+ b , w+ > l+ vl)
+generate p p > t t QCD=99, (t > w+ b , w+ > l+ vl)
 add process p p > t t j QCD=99, (t > w+ b , w+ > l+ vl)
 add process p p > t t j j QCD=99, (t > w+ b , w+ > l+ vl)
 
@@ -16,8 +10,9 @@ add process p p > t~ t~ QCD=99, (t~ > w- b~ , w- > l- vl~)
 add process p p > t~ t~ j QCD=99, (t~ > w- b~ , w- > l- vl~)
 add process p p > t~ t~ j j QCD=99, (t~ > w- b~ , w- > l- vl~)
 
-output test4
-launch test4
+
+output SS2l
+launch SS2l
 
 # set shower, detector
 analysis=MadAnalysis5
@@ -32,7 +27,7 @@ set lshh 0
 set rtc 1
 set rtt 0
 set rtu 0
-set nevents 10000
+set nevents 8000
 set ebeam1 7000.0
 set ebeam2 7000.0
 set MS0 scan1:[200, 300, 400, 500, 600]
