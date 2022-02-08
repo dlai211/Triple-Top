@@ -19,3 +19,4 @@ analysis=MadAnalysis5
 set nevents 10000
 set ebeam1 7000.0
 set ebeam2 7000.0
+done
