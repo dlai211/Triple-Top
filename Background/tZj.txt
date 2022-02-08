@@ -11,7 +11,7 @@ launch tZj
 shower=PYTHIA8
 detector=delphes
 
-set nevents 5000
+set nevents 10000
 set ebeam1 7000.0
 set ebeam2 7000.0
-set use_syst False
+set use_syst True
