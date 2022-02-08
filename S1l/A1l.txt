@@ -1,0 +1,76 @@
+import model gen2HDM_UFO
+define q = u c u~ c~
+define q~ = d~ b~ s~ d b s
+define p = p b b~
+define j = p
+
+generate p p > t A0 QCD=99, (t > w+ b , w+ > l+ vl) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t A0 QCD=99, (t > w+ b , w+ > q q~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t A0 QCD=99, (t > w+ b , w+ > q q~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ A0 QCD=99, (t~ > w-  b~ , w- > l- vl~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ A0 QCD=99, (t~ > w-  b~ , w- > q q~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ A0 QCD=99, (t~ > w-  b~ , w- > q q~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+
+add process p p > t A0 j QCD=99, (t > w+ b , w+ > l+ vl) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t A0 j QCD=99, (t > w+ b , w+ > q q~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t A0 j QCD=99, (t > w+ b , w+ > q q~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ A0 j QCD=99, (t~ > w-  b~ , w- > l- vl~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ A0 j QCD=99, (t~ > w-  b~ , w- > q q~) ,( A0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ A0 j QCD=99, (t~ > w-  b~ , w- > q q~) ,( A0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > q q~) , (A0 > t c~ , (t > w+ b , w+ > q q~))
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > l- vl~) , (A0 > t c~ , (t > w+ b , w+ > q q~))
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > q q~) , (A0 > t c~ , (t > w+ b , w+ > l+ vl))
+
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > q q~) , (A0 > t~ c , (t~ > w- b~ , w- > q q~))
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > l- vl~) , (A0 > t~ c , (t~ > w- b~ , w- > q q~))
+add process p p > t t~ A0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > q q~) , (A0 > t~ c , (t~ > w- b~ , w- > l- vl~))
+
+add process p p > t S0 QCD=99, (t > w+ b , w+ > l+ vl) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t S0 QCD=99, (t > w+ b , w+ > q q~) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t S0 QCD=99, (t > w+ b , w+ > q q~) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ S0 QCD=99, (t~ > w-  b~ , w- > l- vl~) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ S0 QCD=99, (t~ > w-  b~ , w- > q q~) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ S0 QCD=99, (t~ > w-  b~ , w- > q q~) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+
+add process p p > t S0 j QCD=99, (t > w+ b , w+ > l+ vl) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t S0 j QCD=99, (t > w+ b , w+ > q q~) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t S0 j QCD=99, (t > w+ b , w+ > q q~) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+add process p p > t~ S0 j QCD=99, (t~ > w-  b~ , w- > l- vl~) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ S0 j QCD=99, (t~ > w-  b~ , w- > q q~) ,( S0 > t t~ , (t > w+ b , w+ > l+ vl),(t~ > w- b~ , w- > q q~) )
+add process p p > t~ S0 j QCD=99, (t~ > w-  b~ , w- > q q~) ,( S0 > t t~ , (t > w+ b , w+ > q q~),(t~ > w- b~ , w- > l- vl~) )
+
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > q q~) , (S0 > t c~ , (t > w+ b , w+ > q q~))
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > l- vl~) , (S0 > t c~ , (t > w+ b , w+ > q q~))
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > q q~) , (S0 > t c~ , (t > w+ b , w+ > l+ vl))
+
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > q q~) , (S0 > t~ c , (t~ > w- b~ , w- > q q~))
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > l- vl~) , (S0 > t~ c , (t~ > w- b~ , w- > q q~))
+add process p p > t t~ S0 QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > q q~) , (S0 > t~ c , (t~ > w- b~ , w- > l- vl~))
+
+
+output A1l
+launch A1l
+
+# set shower, detector
+shower=Pythia8
+detector=Delphes
+done
+###################################
+# set param and run card settings #
+###################################
+set use_syst False
+set rtc 0.1
+set rtt 1
+set rtu 0
+set kasz 0 
+set kazh -0.37037187
+set lshh 0
+set nevents 8000
+set ebeam1 7000.0
+set ebeam2 7000.0
+set MS0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set ws0 scan1:[0.2510858221774318, 3.33089582984594, 7.392238252326016, 11.637401523582657, 15.860310959586286, 19.997150297933292, 24.032130929749222, 27.967073707803756]
+set MA0 scan1:[350, 400, 450, 500, 550, 600, 650, 700]
+set wa0 scan1:[3.971468008349843, 12.340978652612053, 17.510512368917247, 21.888296836833756, 25.87979309124852, 29.64147366558511, 33.25137848197779, 36.75421182622855]
+done
