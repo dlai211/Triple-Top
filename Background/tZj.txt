@@ -10,8 +10,10 @@ output tZj
 launch tZj
 shower=PYTHIA8
 detector=delphes
+analysis=MadAnalysis5
 
 set nevents 10000
 set ebeam1 7000.0
 set ebeam2 7000.0
 set use_syst True
+done
