@@ -1,0 +1,18 @@
+define p = p b b~
+define j = p
+define w = w+ w- 
+generate p p > t t~ w j [QCD]
+
+output ttW
+
+launch ttW 
+order=NLO
+fixed_order=OFF
+shower=PYTHIA8
+madanalysis=ON
+done
+
+set nevents 10000
+set ebeam1 7000
+set ebeam2 7000
+done
