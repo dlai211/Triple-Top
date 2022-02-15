@@ -1,0 +1,20 @@
+define q = u c u~ c~
+define q~ = d~ b~ s~ d b s
+define p = p b b~
+define j = p
+add process p p > t t~ t t~ QCD=99, (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > l- vl~), (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~)
+add process p p > t t~ t t~ QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > q q~), (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~)
+add process p p > t t~ t t~ QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~), (t > w+ b , w+ > q q~), (t~ > w- b~ , w- > l- vl~)
+add process p p > t t~ t t~ QCD=99, (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > l- vl~), (t > w+ b , w+ > l+ vl), (t~ > w- b~ , w- > q q~)
+
+output tttt
+
+launch tttt
+shower=PYTHIA8
+detector=delphes
+
+set nevents 10000
+set ebeam1 7000.0
+set ebeam2 7000.0
+set use_syst True
+done
